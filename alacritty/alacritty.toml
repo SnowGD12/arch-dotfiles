@@ -1,0 +1,78 @@
+[window]
+padding = { x = 12, y = 12 }
+opacity = 0.90
+blur = false
+
+[font]
+size = 20
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+
+# --- Oxocarbon Color Palette ---
+[colors.primary]
+background = "#161616"
+foreground = "#F2F4F8"
+dim_foreground = "#82828e"
+bright_foreground = "#FFFFFF"
+
+[colors.cursor]
+text = "#161616"
+cursor = "#F2F4F8"
+
+[colors.selection]
+text = "#F2F4F8"
+background = "#393939"
+
+[colors.search.matches]
+foreground = "#161616"
+background = "#82828e"
+
+[colors.search.focused_match]
+foreground = "#161616"
+background = "#42BE65"
+
+# Standard Colors
+[colors.normal]
+black   = "#161616"
+red     = "#EE5396"
+green   = "#42BE65"
+yellow  = "#FFE97B"
+blue    = "#78A9FF"
+magenta = "#BE95FF"
+cyan    = "#3DDBD9"
+white   = "#F2F4F8"
+
+# Bright Colors
+[colors.bright]
+black   = "#393939"
+red     = "#EE5396"
+green   = "#42BE65"
+yellow  = "#FFE97B"
+blue    = "#78A9FF"
+magenta = "#BE95FF"
+cyan    = "#3DDBD9"
+white   = "#FFFFFF"
+
+# Dim Colors
+[colors.dim]
+black   = "#131313"
+red     = "#9e3049"
+green   = "#2a7e42"
+yellow  = "#a89652"
+blue    = "#4d6d9e"
+magenta = "#7c619e"
+cyan    = "#298f8d"
+white   = "#9a9a9e"
