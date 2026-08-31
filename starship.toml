@@ -1,0 +1,144 @@
+# Oxocarbon prompt layout with Arch logo and language detection
+format = """
+$os\
+$directory\
+$git_branch\
+$git_status\
+$c\
+$cpp\
+$python\
+$rust\
+$nodejs\
+$golang\
+$java\
+$php\
+$ruby\
+$zig\
+$docker_context\
+$cmd_duration\
+$line_break\
+$character"""
+
+# Right prompt for background status
+right_format = """$jobs$status"""
+
+# OS Badge: Oxocarbon blue
+[os]
+disabled = false
+style = "bg:#78A9FF fg:#161616 bold"
+format = "[ $symbol ]($style)"
+[os.symbols]
+Arch = "󰣇"
+Linux = "󰣇"
+
+# Character prompt: pink success, magenta error
+[character]
+success_symbol = "[❯](fg:#FF7EB6)"
+error_symbol = "[❯](fg:#EE5396)"
+
+# Current Directory: fg text on bg1 badge
+[directory]
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+style = "bg:#262626 fg:#F2F4F8 bold"
+read_only = " 󰌾"
+read_only_style = "bg:#262626 fg:#EE5396"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Git Branch: cyan on bg2
+[git_branch]
+format = "[ $symbol$branch ]($style)"
+symbol = "󰘬 "
+style = "bg:#393939 fg:#33B1FF"
+
+# Git Status: purple on bg2
+[git_status]
+format = "[ $all_status$ahead_behind ]($style)"
+style = "bg:#393939 fg:#BE95FF"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?"
+stashed = "$"
+modified = "!"
+staged = "+"
+renamed = "»"
+deleted = "✘"
+
+# --- Programming Language Modules (Oxocarbon accent badges) ---
+[c]
+symbol = " "
+style = "bg:#262626 fg:#78A9FF"
+format = "[ $symbol$version ]($style)"
+
+[cpp]
+symbol = " "
+style = "bg:#262626 fg:#78A9FF"
+format = "[ $symbol$version ]($style)"
+
+[python]
+symbol = " "
+style = "bg:#262626 fg:#FFE97B"
+format = "[ $symbol$version ]($style)"
+
+[rust]
+symbol = " "
+style = "bg:#262626 fg:#FF7EB6"
+format = "[ $symbol$version ]($style)"
+
+[nodejs]
+symbol = " "
+style = "bg:#262626 fg:#42BE65"
+format = "[ $symbol$version ]($style)"
+
+[golang]
+symbol = " "
+style = "bg:#262626 fg:#33B1FF"
+format = "[ $symbol$version ]($style)"
+
+[java]
+symbol = " "
+style = "bg:#262626 fg:#EE5396"
+format = "[ $symbol$version ]($style)"
+
+[php]
+symbol = "🐘 "
+style = "bg:#262626 fg:#BE95FF"
+format = "[ $symbol$version ]($style)"
+
+[ruby]
+symbol = " "
+style = "bg:#262626 fg:#EE5396"
+format = "[ $symbol$version ]($style)"
+
+[zig]
+symbol = " "
+style = "bg:#262626 fg:#FFE97B"
+format = "[ $symbol$version ]($style)"
+
+[docker_context]
+symbol = " "
+style = "bg:#262626 fg:#3DDBD9"
+format = "[ $symbol$context ]($style)"
+
+# --- Utilities ---
+
+# Command Execution Duration: yellow
+[cmd_duration]
+format = " [ 󱎫 $duration ]($style)"
+style = "fg:#FFE97B"
+min_time = 2000
+
+# Background jobs indicator: green
+[jobs]
+format = "[ $symbol$number ]($style)"
+symbol = "✦ "
+style = "fg:#42BE65"
+
+# Exit code / Error status indicator: magenta on bg0
+[status]
+format = "[ $symbol $status ]($style)"
+symbol = "✖"
+style = "bg:#EE5396 fg:#161616"
+disabled = false
